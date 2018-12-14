@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script scr="jquery/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('li[name="thedonald"]').addClass('red-color');
+        });
+    </script>
+    <style>
+        .red-color{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h3>Republican presidential candidates</h3>
+    <div>
+        <ul id="republican">
+            <li id="djt" name="thedonald">
+                Donald Trump
+                <ul>
+                    <li class="vicepresident">Mike Pence</li>
+                    <li>Chris Christie</li>
+                    <li>Newt Gingrich</li>
+                </ul>
+            </li>
+            <li id="ted">
+                Ted Cruz
+                <ul class="vicepresident">
+                    <li>Carly Fiorina</li>
+                </ul>
+            </li>
+            <li class="governor">John Kasich</li>
+            <li class="governor">Jeb Bush</li>
+            <li>Ben Carson</li>
+            <li class="ceo">Carly Fiorina</li>
+            <li class="governor">Chris Christie</li>
+        </ul>
+    </div>
+</body>
+</html>
