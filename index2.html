@@ -5,15 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script scr="jquery/jquery.js"></script>
+    <script src="jquery/jquery.js"></script>
     <script>
         $(document).ready(function(){
-            $('li[name="thedonald"]').addClass('red-color');
+            $("li[name='thedonald']").addClass('red-color');
+            $('#republican>li').addClass('border');
+            $('.governor, .ceo').addClass('underline');
+            $('.governor:gt(0)').addClass('bg-yellow');
+            $('#ted .vicepresident li').addClass('color-blue')
         });
     </script>
     <style>
         .red-color{
             color: red;
+        }
+        .border{
+            border: 1px solid blueviolet;
+            padding: 10px 12px;
+        }
+        .underline{
+            text-decoration: underline;
+        }
+        .bg-yellow{
+            background: yellow;
+        }
+        .color-blue{
+            color: blue;
         }
     </style>
 </head>
