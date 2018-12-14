@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            table, th , td {
+                border: 1px solid grey;
+                border-collapse: collapse;
+                padding: 5px;
+            }
+            .even-row {
+                background-color: aliceblue;
+            }
+            .odd-row {
+                background-color: yellow;
+            }
+            .highlight {
+                font-weight: bold;
+                color: #de1515;
+            }
+            .text{
+                font-weight: 600;
+                color: red;
+            }
+        </style>
+
+        <script src="jquery/jquery.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('tr:even').addClass('even-row');
+                $('tr:odd').addClass('odd-row');
+               // $('tr:gt(1)').addClass('highlight'); // lớn hơn index[1] thì được áp dụng
+                //$('tr:lt(2)').addClass('highlight'); // nhỏ hơn index [2] thì được áp dụng
+                //$('tr:eq(2)').addClass('highlight'); // áp dụng tại index [2]
+                //$("td:contains('Muggle')").addClass('text'); //Tìm từ Muggle trong thẻ td. nếu có thì addClass
+            });
+        </script>
+</head>
+<body>
+        <h3>
+                Hogwarts professors and classes
+            </h3>
+            <div>
+                <table>
+                    <tr class="non-human">
+                        <td> Cuthbert Binns </td>
+                        <td> History Of Magic </td>
+                    </tr>
+                    <tr>
+                        <td> Charity Burbage </td>
+                        <td> Muggle Studies </td>
+                    </tr>
+                    <tr class="non-human">
+                        <td> Firenze </td>
+                        <td> Divination </td>
+                    </tr>
+                    <tr class="non-human">
+                        <td> Rubeus Hagrid </td>
+                        <td> Care Of Magical Creatures </td>
+                    </tr>
+                    <tr>
+                        <td> Aurora Sinistra </td>
+                        <td> Astronomy </td>
+                    </tr>
+                </table>
+            </div>
+</body>
+</html>
