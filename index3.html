@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>index3</title>
+    <script src="jquery/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            //$('div.father').parent().addClass('text-underline');//parent() chọn tất cả phần tử từ cha chở xuống
+            //$('div.son').parents().addClass('text-underline');
+           // $('div.son').parentsUntil('div.great-grandfather').addClass('text-underline');//chọn tất cả thằng con cùng cấp cho đến khi gặp thằng cha 
+           //$('.son').closest('section').addClass('text-underline');
+           //$('.father').children().addClass('text-underline'); chọn phần tử con
+           //$('.son').next().addClass('text-underline'); tính từ phần tử thứ index 1 trở đi
+           //$('.son').prev().addClass('text-underline');//tính tất cả từ phần tử  last-1 trở về trước
+            //$('.son').nextAll().first().addClass('text-underline');//chỉ chon phần tử thứ index[0] + 1
+            //$('.son').nextAll().last().addClass('text-underline');// chỉ chọn phần tử last
+            //$('.son').prevAll().last().addClass('text-underline');// chọn phần tử index[0]
+           // $('.son').prevAll().first().addClass('text-underline'); // chọn phần tử index[last] -1
+
+           //$('.son').siblings().addClass('text-underline');// chọn tất cả phần tử có tên là .son
+        });
+    </script>
+    <style>
+        .text-underline{
+            text-decoration: underline;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="indent great-grandfather">
+        Great-grandfather
+    
+        <div class="indent grandfather">
+            Grandfather
+    
+            <section class="indent father">
+                Father
+    
+                <div class="indent son">
+                    Son 1
+                </div>
+                <div class="indent son">
+                        Son 1
+                    </div>
+                    <div class="indent son">
+                            Son 1
+                        </div>
+                <div class="indent son">
+                    Son 2
+                </div>
+                <div class="indent son">
+                    Son 3
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="indent great-grandmother">
+        Great-grandmother
+    
+        <div class="indent grandmother">
+            Grandmother
+    
+            <div class="indent mother">
+                Mother
+    
+                <div class="indent daughter">
+                    Daughter 1
+                </div>
+                <div class="indent daughter">
+                    Daughter 2
+                </div>
+                <div class="indent daughter">
+                    Daughter 3
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="indent great-granduncle">
+        Great-granduncle
+    </div>
+    <div class="indent great-grandaunt">
+        Great-grandaunt
+    </div>
+</body>
+</html>
