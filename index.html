@@ -5,15 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Jquery Selector</title>
-    <script src="jquery/jquery-ui.min.js"></script>
+    <script src="jquery/jquery.js"></script>
     <style>
         .red-color{
             color: red;
+        }
+        .blue-color{
+            color: blue;
+        }
+        .bg-blueviolet{
+            background: blueviolet;
+        }
+        .font-italic{
+            font-style: italic;
         }
     </style>
     <script>
         $(document).ready(function(){
             $('#heading-3').addClass('red-color');
+            $('#paragrap1').addClass('blue-color');
+            $('#heading2').addClass('bg-blueviolet');
+            $('#paragrap2').addClass('font-italic');
         });
     </script>
 </head>
