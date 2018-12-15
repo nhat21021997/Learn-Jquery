@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery/jquery.js"></script>
+    <script>
+        $jq=jQuery.noConflict();
+        $jq(document).ready(function(){
+            $jq('h3').addClass('heading-1');
+        });
+         
+         // tránh xung đột giữa 2 class cùng tên
+         window.onload = function(){
+             let el = $("content");
+                el.innerHTML = "Thanh cong";
+         };
+
+         $jq(document).ready(function($){
+            $('p').addClass('heading-1');
+         });
+    </script>
+    <style>
+        .heading-1{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h3>Hello World!</h3>
+    <p id="content">Some content here</p>
+</body>
+</html>
