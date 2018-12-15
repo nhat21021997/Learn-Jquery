@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('tr').filter(':even').addClass('row-even');
+            var listText=['Cuthbert Binns', 'Firenze', 'Remus Lupin'];
+            $('td').filter(function(){
+                return listText.indexOf(this.innerText) != -1;
+            }).addClass('highlight');
+            $('a').filter(function(){
+                return this.hostname && this.hostname.indexOf('wikipedia') != -1;
+            }).addClass('wikipedia');
+            $('a').filter(function(){
+                return this.hostname && this.hostname.indexOf('wikipedia') == -1;
+            }).addClass('error');
+
+            $('tr').filter(function(index){
+                return index === 2 || $(this).attr('id') === "nhat";
+            }).addClass('nhat');
+        });
+    </script>
+    <style>
+        .nhat{
+            color: red;
+            background: #333;
+        }
+        .error{
+            background: blueviolet;
+        }
+        .row-even{
+            background: yellow;
+        }
+        .highlight{
+            color: red;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        .wikipedia:hover{
+            color: red;
+        }
+        table,th,td{
+            border: 1px solid blueviolet;
+            padding: 10px 12px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Hogwarts professors and classes</h3>
+    <div>
+        <table>
+            <tr>
+                <td> Cuthbert Binns </td>
+                <td> History Of Magic </td>
+            </tr>
+            <tr>
+                <td> Charity Burbage </td>
+                <td>
+                    <a href="https://evil.com">Muggle Studies</a>
+                </td>
+            </tr>
+            <tr>
+                <td> Firenze </td>
+                <td><a href="https://en.wikipedia.org/wiki/Magic_in_Harry_Potter#Divination">Divination</a></td>
+            </tr>
+            <tr>
+                <td> Pomona Sprout </td>
+                <td> Herbology </td>
+            </tr>
+            <tr>
+                <td> Rubeus Hagrid </td>
+                <td><a href="https://en.wikipedia.org/wiki/Magic_in_Harry_Potter#Care_of_Magical_Creatures">Care Of Magical Creatures</a></td>
+            </tr>
+            <tr>
+                <td> Aurora Sinistra </td>
+                <td> Astronomy </td>
+            </tr>
+            <tr id="nhat">
+                <td> Remus Lupin </td>
+                <td> Defense Against The Dark Arts </td>
+            </tr>
+            <tr>
+                <td> Severus Snape </td>
+                <td> Defense Against The Dark Arts </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
