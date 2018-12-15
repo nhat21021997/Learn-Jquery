@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#hello').click(function(){
+                alert("1");
+            });
+            $('#hello').click(function(){
+                alert("2");
+            });
+            $('#hello').click(function(){
+                alert("3");
+            });
+
+            $('#clickMe').bind('mouseenter mouseleave', function(e){
+                alert("mouse event" + e.type);
+            })
+
+            $('#clickMeAgain').on({
+                mouseenter: function(e){
+                    console.log(" mouseenter");
+                },
+                mouseleave: function(e){
+                    console.log( " mouseleave");
+                },
+                click : function(e){
+                    console.log("click");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="hello">Hello!</button>
+    <button id="clickMe">Click me</button>
+    <button id="clickMeAgain">Click me as well!</button>
+</body>
+</html>
