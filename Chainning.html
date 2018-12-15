@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("td:contains('Firenze')").parent().find('td:eq(0)').addClass('td-index-0').end().find('td:eq(1)').addClass('td-index-1');
+        });
+    </script>
+    <style>
+        .td-index-1{
+            color: red;
+        }
+        .td-index-0{
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <h3>
+            Hogwarts professors and classes
+    </h3>
+    <div>
+        <table>
+            <tr>
+                <td> Cuthbert Binns </td>
+                <td> History Of Magic </td>
+            </tr>
+            <tr>
+                <td> Gilderoy Lockhart </td>
+                <td> Defense Against The Dark Arts </td>
+            </tr>
+            <tr>
+                <td> Charity Burbage </td>
+                <td> Muggle Studies </td>
+            </tr>
+            <tr>
+                <td> Alastor Moody </td>
+                <td> Defense Against The Dark Arts </td>
+            </tr>
+            <tr>
+                <td> Firenze </td>
+                <td> Divination </td>
+            </tr>
+            <tr>
+                <td> Quirinus Quirrell </td>
+                <td> Defense Against The Dark Arts </td>
+            </tr>
+            <tr>
+                <td> Rubeus Hagrid </td>
+                <td> Care Of Magical Creatures </td>
+            </tr>
+            <tr>
+                <td> Horace Slughorn </td>
+                <td> Potions </td>
+            </tr>
+            <tr>
+                <td> Aurora Sinistra </td>
+                <td> Astronomy </td>
+            </tr>
+            <tr>
+                <td> Remus Lupin </td>
+                <td> Defense Against The Dark Arts </td>
+            </tr>
+            <tr>
+                <td> Severus Snape </td>
+                <td> Defense Against The Dark Arts </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
