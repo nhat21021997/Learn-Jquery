@@ -8,17 +8,41 @@
     <script src="jquery/jquery.js"></script>
     <script>
         $(document).ready(function(){
-            let randomLove =['Tôi yêu em', 'Tôi quý em', 'Mình chỉ là bạn'];
+            let randomLove =['Em à', 'Em ơi', 'Em đâu rồi ! Dạ đi nào?', 'Anh yêu em thật rồi'];
 
-            $('#ghost').on('click',{
-                rdLName : randomLove
-            }, function(e){
-                alert(e.data.rdLName[Math.floor(Math.random()*e.data.rdLName.length)]);
-            })
+            // $('#ghost').on('click',{
+            //     rdLName : randomLove
+            // }, function(e){
+            //     alert(e.data.rdLName[Math.floor(Math.random()*e.data.rdLName.length)]);
+            // })
+
+            //listenJustOnce
+
+            $('#ghost').one('click',{
+                loveName: randomLove
+            },function(e){
+                alert(e.data.loveName[Math.floor(Math.random()*e.data.loveName.length)]);
+            });
         });
     </script>
+    <Style>
+        button{
+            color: #fff;
+            background: blueviolet;
+            font-weight: 600;
+            padding: 10px 14px;
+            font-size: 14px;
+            border:none;
+            border-radius: 20px;
+            text-align: center;
+        }
+        body{
+            text-align: center;
+            padding-top: 50px;
+        }
+    </Style>
 </head>
 <body>
-    <button id="ghost">Hogwarts Ghosts</button>
+    <button id="ghost">Nói lên cảm xúc</button>
 </body>
 </html>
