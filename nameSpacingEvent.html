@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#clickMe').on('click.importantNamesSpace', function(){
+                console.log(" Day lam importantNamesSpace - No xuat hien khi tat ca temporaryNamesSpace bi remove");
+            });
+
+            $('#clickMe').on('click.temporaryNamesSpace', function(){
+                console.log(" day la temporaryNamesSpace");
+            });
+            $('#clickMe').on('mouseenter.temporaryNamesSpace mouseleave.temporaryNamesSpace', function(){
+                console.log('day la mouse ra vao');
+            });
+
+            $('#removeClick').on('click', function(){
+                console.log(" remove temporaryNamesSpace");
+                $('#clickMe').off('click.temporaryNamesSpace');
+            });
+
+            $('#removeAll').click(function(){
+                console.log('remove all');
+                $('#clickMe').off('.temporaryNamesSpace');
+            })
+
+        });
+    
+    </script>
+</head>
+<body>
+    <button id="clickMe">Click me, I have namespaced events</button>
+    <br>
+    <br>
+    <button id="removeClick">Remove temporary click event</button>
+    <br>
+    <br>
+    <button id="removeAll">Remove all temporary events</button>
+</body>
+</html>
