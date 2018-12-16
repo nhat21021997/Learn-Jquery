@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Remove Event Handlers</title>
+    <script src="jquery/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            let click1Fn = function(){
+                console.log('Nhap xong phan 1');
+            }
+            let click2Fn = function(){
+                console.log(' nhap xong 2');
+            }
+            const click3Fn = function(){
+                console.log('Nhap xong 3');
+            }
+
+            $('#clickMe').on('click',click1Fn);
+            $('#clickMe').on('click',click2Fn);
+            $('#clickMe').on('click',click3Fn);
+
+            $('#removeClick').on('click', function(){
+                console.log('Remove click 1');
+                $('#clickMe').off('click', click1Fn);
+            });
+
+            $('#removeAll').click(function(){
+                console.log('remove all');
+                $('#clickMe').off('click');
+            });
+
+            $('#resetAll').click(function(){
+                console.log('reset all');
+                $('#clickMe').on('click',click1Fn);
+                $('#clickMe').on('click',click2Fn);
+            $('#clickMe').on('click',click3Fn);
+            })          
+        });
+    </script>
+</head>
+<body>
+    <button id="clickMe">Click me, I have multiple event handlers</button>
+    <br>
+    <br>
+    <button id="removeClick">Remove the click1 event</button>
+    <br>
+    <br>
+    <button id="removeAll">Remove all click events</button>
+    <button id="resetAll">Reset all click events</button>
+</body>
+</html>
