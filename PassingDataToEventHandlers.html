@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            let randomLove =['Tôi yêu em', 'Tôi quý em', 'Mình chỉ là bạn'];
+
+            $('#ghost').on('click',{
+                rdLName : randomLove
+            }, function(e){
+                alert(e.data.rdLName[Math.floor(Math.random()*e.data.rdLName.length)]);
+            })
+        });
+    </script>
+</head>
+<body>
+    <button id="ghost">Hogwarts Ghosts</button>
+</body>
+</html>
