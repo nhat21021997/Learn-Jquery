@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery/jquery.js"></script>
+     <script>
+        $(document).ready(function(){
+            $('.box').on('color:change', function(){
+                let colorNames= ['#333', 'red','blue','gray'];
+                let box = $(this);
+                box.css('background', colorNames[Math.floor(Math.random()*colorNames.length)]);
+            })
+
+
+            $('body').on('mouseenter','button', function(){
+                $(this).closest('.box').trigger('color:change');
+            });
+
+            $('.box').on('color:defautl', function(){
+                let colorNames= '#fff';
+                let box = $(this);
+                box.css('background', colorNames);
+            })
+
+            $('body').on('mouseleave','button', function(){
+                $(this).closest('.box').trigger('color:defautl');
+            });
+        })
+     </script>
+    <style>
+        .box {
+            height: 100px;
+            width: 250px;
+            vertical-align: middle;
+            border: solid 1px grey;
+            margin: 2px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <button id="changeColor1">Change</button>
+    </div>
+    <br>
+    <div class="box">
+        <button id="changeColor2">Change</button>
+    </div>
+    <br>
+    <div class="box">
+        <button id="changeColor3">Change</button>
+    </div>
+    <br>
+    <div class="box">
+        <button id="changeColor4">Change</button>
+    </div>
+    <br>
+</body>
+<!-- $(document).ready(function(){
+    $('.box').on('color:change', function(){
+        let listColor = ['#333', 'red', 'blueviolet', 'greenyellow'];
+        let box = $(this);
+        box.css('background-color', listColor[Math.floor(Math.random()*listColor.length)]);
+    });
+
+    $('.box').on('color:default', function(){
+        let color = '#fff';
+        let box1 =$(this);
+        box1.css('background-color',color);
+        console.log('roi khoi');
+    });
+    $('body').on('mouseenter', 'button', function(){
+        $(this).closest('.box').trigger('color:change');
+    });
+    $('body').on('mouseleave', 'button', function(){
+        $(this).closest('.box').trigger('color:default');
+    });
+}); -->
+</html>
