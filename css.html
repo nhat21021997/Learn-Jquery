@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#smaller').on('click', function(){
+                let fontSizeText = $('.fontbox').css('font-size');
+                let fontSize = parseInt(fontSizeText.substring(0,fontSizeText.length -2));
+                //hàm substring có 2 giá trị start và end. và giá trị start luôn lớn hơn end. nếu ngượi thì nó sẽ hoán đổi
+                // substring(5,1): nó sẽ đi từ trái qua phải đủ 5 phần tử. rồi cut đi phần tử đầu tiên
+                fontSize = Math.max(15, fontSize- 1);
+
+                $('.fontbox').css('font-size', fontSize + 'px');
+            });
+
+            $('#bigger').on('click', function(){
+                let fontSizeText = $('.fontbox').css('font-size');
+                let fontSize = parseInt(fontSizeText.substring(0,fontSizeText.length - 2));
+                fontSize++;
+
+                $('.fontbox').css('font-size', fontSize + 'px');
+            });
+
+
+            $('#manyProperties').on('click', function(){
+                let colors =['red', 'green', 'blue', 'blueviolet', 'greenyellow'];
+                let textTransform=['uppercase', 'lowercase'];
+                let fontSize =['30px', '12px', '15px', '7px'];
+                let properties = $('.propertiesbox').css(['color', 'text-transform', 'font-size']);
+
+                $('.propertiesbox').css({
+                    'color': colors[Math.floor(Math.random()*colors.length)],
+                    'text-transform': textTransform[Math.floor(Math.random()*textTransform.length)],
+                    'font-size': fontSize[Math.floor(Math.random()*fontSize.length)]
+                });
+            })
+        });
+    </script>
+    <style>
+        .box {
+            height: 100px;
+            width: 250px;
+            vertical-align:middle;
+            text-align: center;
+            border: solid 1px grey;
+            margin: 2px 0px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="fontbox box">Hello!</div>
+    <button id="smaller">Smaller</button>
+    <button id="bigger">Bigger</button>
+    <br>
+    <br>
+    <div class="propertiesbox box">How are you?</div>
+    <button id="manyProperties">Change a bunch of properties</button>
+    <br>
+</body>
+</html>
