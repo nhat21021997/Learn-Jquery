@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(document).keyup(function(e){
+                var ch = String.fromCharCode(e.which);
+                //Nhiều khi keyWork kHông viết  hoa chữ cái đầu sinh ra lỗi fromcharCode
+                $('div').append(ch);
+            });
+        });
+        // $(document).ready(function() {
+        //     $(document).keyup(function(event) {
+        //         var ch = String.fromCharCode(event.which);
+        //         $('div').append(ch);
+        //     });
+        // });
+    </script>
+</head>
+<body>
+    <h3>Last key pressed</h3>
+    <div class="big"></div>
+</body>
+</html>
