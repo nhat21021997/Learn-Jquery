@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.big').on('mouseenter', function(){
+                console.log('Ban vua di chuot vao :' + $(this).text());
+            });
+            $('.big').on('mouseleave', function(){
+                console.log('ban vua di chuot ra khoi:' + $(this).text());
+            });
+            $('#triggerButton1').on('click', function(){
+                console.log('Ban vua click vao:' + $(this).text());
+                $('.big').trigger('mouseenter');
+            });
+            $('#triggerButton2').on('click', function(){
+                console.log('Ban vua bam vao : ' + $(this).text());
+                $('.big').trigger('mouseleave');
+            })
+        })
+    </script>
+    <style>
+        .big {
+            height: 100px;
+            width: 250px;
+            background-color: yellow;
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="big">I have mouse events</div>
+    <br>
+    <br>
+    <button id="triggerButton1">Trigger mouse enter</button>
+    <button id="triggerButton2">Trigger mouse leave</button>
+    <br>
+    <br>
+</body>
+</html>
