@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.toggle').click(function(){
+                $('.article').toggle();
+            });
+            $('.slidetoggleslow').on('click',function(){
+                $('.article').slideToggle('slow');
+            });
+
+            //customToggle
+            $('.fadetogglecustom').on('click', function(){
+                // $('.article').fadeToggle();
+                let currentOpacity = 1;
+                let finalOpacity = 0;
+                let id = setInterval(function(){
+                    $('.article').css('opacity',currentOpacity);
+                    currentOpacity -= 1;
+                    if(currentOpacity < finalOpacity){
+                        clearIntervel(id);
+                    }
+                },100);
+            });
+        });
+    </script>
+    <style>
+            .link {
+                display: inline-block;
+                height: 34px;
+                width: 200px;
+                vertical-align: middle;
+                text-align: center;
+                border: solid 1px dodgerblue;
+                color: dodgerblue;
+                cursor: pointer;
+                margin: 2px 0px;
+                line-height: 34px;
+            }
+        </style>
+</head>
+<body>
+    <h3>How India’s digital economy can rediscover its mojo</h3>
+    <h4>Haresh Chawla</h4>
+    <div class="toggle link">
+        Toggle...
+    </div>
+    <br>
+    <div class="slidetoggleslow link">
+        Slide toggle...
+    </div>
+    <br>
+    <div class="fadetogglecustom link">
+        Fade toggle...
+    </div>
+    <div class="article">
+        <p>
+            <b>India One:</b> Club the top 2-tiers above and you find that the top 15% of Indians, i.e. about
+            150-180 million, earning an average of Rs 30,000 per month, are the ones who have money
+            left over after buying necessities. These 15% of Indians control over half the spending power
+            of the economy and almost its entire discretionary spending. They consume their data plans
+            without thinking about the bills. They install the shiny new apps without bothering about the
+            gigabytes they consume on their oversized and expensive smartphones. They have Wi-Fi at home
+            and office, power generators at home and are connected 24x7.
+        </p>
+        <p>
+            They are equivalent to a country with the population of Canada and live the lifestyle of a
+            European nation (if you equate them on purchasing power parity, or PPP basis)—and with better
+            lifestyle to boot. They have chauffeurs, maids, cooks, cleaners, peons to take care of onerous
+            chores. And no, they won’t step out of their air-conditioned homes into our dirty streets and
+            traffic—everything has to be served instantly, at home. Assisted living at the age of 20,
+            I call it.
+        </p>
+    
+        <p>
+            <b>India Two:</b> This is the middle 30% or 400-odd million Indians, earning an average of Rs 7,000
+            a month. This would be a country about three times the size of Bangladesh with a similar level of
+            purchasing power.
+        </p>
+        <p>
+            They are the ones who “service” the $1 trillion market (yes, read that again) that India One
+            represents. That’s the money that trickles down to them.
+        </p>
+        <p>
+            They have managed to change their fate and climbed out of poverty over the last two decades by
+            migrating from their tiny bits of un-arable land to the mega cities of India and taken up jobs
+            to serve the needs of these markets. They work two shifts as Uber/Ola drivers or as cooks in
+            our burgeoning restaurant chains, or set up small businesses—and send money back home to their
+            families in the villages.
+        </p>
+        <p>
+            Luckily for us, they still see hard work, family values and education as a ticket to a better
+            future. Most save all their money to get their kids an education. You see them break through
+            the barriers every day. Most of their income is spent on food and rent, and whatever little is
+            left they use to try and escape from life in their smartphone screens by buying movies or songs
+            on an SD card from the neighbourhood store. They buy second-hand smartphones and tiny sub-hundred
+            rupee data packs to keep in touch. Of course, we report them as internet consumers in our slick
+            presentations on Startup India.
+        </p>
+        <p>
+            <b>India Three:</b> These are the forgotten 650 million who subsist and don’t have the money to buy
+            two square meals. Their incomes rival that of sub-Saharan Africa. They are the ones who did not
+            leave our road-less, school-less, toilet-less, and power-less villages and instead chose to send
+            a child or a sibling to work in the big cities. They live on the mercy of our monsoons and whatever
+            little reaches them through our poverty alleviation programmes. They live on the periphery of our
+            economy and for all practical purposes don’t participate in it. However, they are the ones who
+            form our vote banks and determine the political future of our nation.
+        </p>
+    </div>
+    <br>
+</body>
+</html>
