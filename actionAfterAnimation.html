@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.readless').click(function(){
+                $('.article').hide();
+                $('.article').fadeOut().removeClass('highlight');
+                $('.readmorewith').on('click',function(){
+                    $('.article').fadeIn(2000).addClass('highlight');
+                });
+                $('.readmoreafter').click(function(){
+                    $('.article').fadeIn(3000,function(){
+                        $(this).addClass('highlight');
+                    })
+                })
+            });
+        })
+    </script>
+
+    <style>
+        .link {
+            display: inline-block;
+            height: 34px;
+            width: 200px;
+            vertical-align: middle;
+            text-align: center;
+            border: solid 1px dodgerblue;
+            color: dodgerblue;
+            cursor: pointer;
+            margin: 2px 0px;
+            line-height: 34px;
+        }
+
+        .highlight {
+            font-size: 24px;
+            color: red;
+        }
+</style>
+</head>
+<body>
+    <h3>How India’s digital economy can rediscover its mojo</h3>
+    <h4>Haresh Chawla</h4>
+    <div class="readmorewith link">
+        Read (highlight in parallel)
+    </div>
+    <div class="readmoreafter link">
+        Read (highlight after)
+    </div>
+    <div class="readless link">
+        Hide
+    </div>
+    <div class="article">
+        <p class="main">
+            <b>India One:</b> Club the top 2-tiers above and you find that the top 15% of Indians, i.e. about
+            150-180 million, earning an average of Rs 30,000 per month, are the ones who have money
+            left over after buying necessities. These 15% of Indians control over half the spending power
+            of the economy and almost its entire discretionary spending. They consume their data plans
+            without thinking about the bills. They install the shiny new apps without bothering about the
+            gigabytes they consume on their oversized and expensive smartphones. They have Wi-Fi at home
+            and office, power generators at home and are connected 24x7.
+        </p>
+        <p>
+            They are equivalent to a country with the population of Canada and live the lifestyle of a
+            European nation (if you equate them on purchasing power parity, or PPP basis)—and with better
+            lifestyle to boot. They have chauffeurs, maids, cooks, cleaners, peons to take care of onerous
+            chores. And no, they won’t step out of their air-conditioned homes into our dirty streets and
+            traffic—everything has to be served instantly, at home. Assisted living at the age of 20,
+            I call it.
+        </p>
+    
+        <p class="main">
+            <b>India Two:</b> This is the middle 30% or 400-odd million Indians, earning an average of Rs 7,000
+            a month. This would be a country about three times the size of Bangladesh with a similar level of
+            purchasing power.
+        </p>
+        <p>
+            They are the ones who “service” the $1 trillion market (yes, read that again) that India One
+            represents. That’s the money that trickles down to them.
+        </p>
+    </div>
+    <br>
+</body>
+</html>
