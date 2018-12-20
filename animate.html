@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.small').click(function(){
+                $('.text').animate({
+                    'font-size':'5px',
+                    'color':'blue'
+                },
+                20000,
+                function(){
+                    alert('font-size hien tai la: small' + $(this).text());
+                });
+            });
+
+            $('.medium').click(function(){
+                $('.text').animate({
+                    'font-size' : '20px',
+                    color : 'blueviolet'
+                },
+                10000,
+                function(){
+                    alert("font medium" +$(this).text());
+                });
+            });
+
+            //MoreAnimate
+            $('.left').click(function(){
+                $('.text').animate({
+                    'left':['+=200px', 'swing'],
+                    'font-size':['+=60px']
+                },30000);
+            });
+            $('.right').click(function(){
+                $('.text').animate({
+                    'left':['-=200px', 'linear']
+                },20000);
+            });
+
+            //stop animate
+            $('.stop').click(function(){
+                $('.text').filter(':animated').first().stop();
+                //lưu ý hành động animated NOT animate
+            })
+
+            //random() animate
+            let propertiesrd = [
+                {
+                    'left' : ['+=200px', 'swing'],
+                    borderLeftWith:'1px'
+                },
+                {
+                    'fontSize' : ['+=20px', 'swing'],
+                    borderLeftWith:'1px'
+                }
+            ];
+            $('.random').click(function(){
+                $('.text').each(function(){
+                    $(this).animate(
+                        propertiesrd[Math.floor(Math.random()*propertiesrd.length)],200
+                    );
+                });
+            });
+            $('.delay').click(function(){
+                $('.text').animate(
+                    {
+                        fontSize :'50px'
+                    }
+                ).delay(1500).animate({
+                    height : 'toggle'
+                });
+            });
+        });
+    </script>
+    <style>
+            .link {
+                display: inline-block;
+                height: 34px;
+                width: 200px;
+                vertical-align: middle;
+                text-align: center;
+                border: solid 1px lightgoldenrodyellow;
+                color: darkorange;
+                cursor: pointer;
+                margin: 2px 0px;
+                line-height: 34px;
+            }
+    
+            .link:hover {
+                border: solid 1px darkorange;
+                color: orangered;
+            }
+    
+            .text {
+                font-family: sans-serif;
+                font-size: 44px;
+                color: #de1515;
+                opacity: 1.0;
+                margin-top: 18px;
+                position: absolute;
+                left: 50px;
+                border: 0px solid blue;
+            }
+    
+        </style>
+</head>
+<body>
+    <div class="small link">
+            Small
+    </div>
+    <div class="medium link">
+        Medium
+    </div>
+    <div class="big link">
+        Big
+    </div>
+    <div class="left link">
+        left
+    </div>
+    <div class="right link">
+        right
+    </div>
+    <div class="stop link">
+        stop
+    </div>
+    <div class="random link">
+        random
+    </div>
+    <div class="delay link">
+        delay
+    </div>
+    <div class="text">
+        Loonycorn rocks!
+    </div>
+    <br>
+</body>
+</html>
